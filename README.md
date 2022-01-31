@@ -1,4 +1,5 @@
 # linux_tablet
 Try to install linux on a chinese tablet
-test
-test2
+----------------------------------------
+
+Download u-boot: git clone git://git.denx.de/u-boot.git
