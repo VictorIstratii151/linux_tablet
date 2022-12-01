@@ -54,7 +54,7 @@ bootz 0x42000000 - 0x43000000
 
 if you passed the boot args to u-boot
 
-19. create the boo script from this command: mkimage -C none -A arm -T script -d boot.cmd boot.scr
+19. create the boot script from this command: mkimage -C none -A arm -T script -d boot.cmd boot.scr
 20. Download a rootfs (for example debian): https://uk.lxd.images.canonical.com/images/debian/stretch/armhf/default/20220128_05:25/
 21. mount the rootfs to the second partition:
 mount ${card}${p}2 /mnt/
