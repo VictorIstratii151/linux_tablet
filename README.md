@@ -79,6 +79,12 @@ the USB was just DEAD after kernel boot, even with zImage configured as above. T
 ROOTFS!
 So far I used https://olimex.wordpress.com/2014/07/21/how-to-create-bare-minimum-debian-wheezy-rootfs-from-scratch/ in order to set up a minimal rootfs with no UI. In addition I installed different tools within chroot, like net-tools, network-managers (maybe it's not needed?). For UI (will work on this later) I had to install java suitable for the Debian distro of choice, then use tasksel (or something like this?) to download the UI packages. Not sure if editing /etc/network/interfaces made anything useful for the wifi configs (about wifi below)
 
+Don't forget to edit/create fstab!
+none		/tmp	tmpfs	defaults,noatime,mode=1777	0	0 # <-- tmpfs
+/dev/mmcblk0p2	/	ext4	defaults	0	1 
+/dev/mmcblk0p1	/boot	vfat	defaults	0	2 
+https://linux-sunxi.org/Debootstrap
+
 24. compiling/decompiling a device tree
 dtc -I dtb -O dts sun8i-a33-q8-tablet.dtb -o sun8i-a33-q8-tablet.dts
 dtc -I dts -O dtb -f sun8i-a33-q8-tablet.dts -o sun8i-a33-q8-tablet.dtb
